@@ -25,6 +25,15 @@
                 <?php
                 $ingredientstore = simplexml_load_file("ingredients.xml") or die("Error: Cannot create object.");
                 foreach ($ingredientstore as $ingredient) {
+                    // check if search term was included in GET request
+                    if(isset($_GET['search'])) {
+                        // Filter and sanitize input
+                        $search_term = filter_input(INPUT_GET, "search", FILTER_SANITIZE_STRING);
+                        $search_term = strtolower($search_term);
+                        if(strcmp(strtolower($ingredient->name),$search_term) != 0) {
+                            continue; // if strings do not match, continue to next ingredient.
+                        }
+                    }
                     echo '<div class="col-sm-4 col-lg-4 col-md-4">
                             <div class="thumbnail">
                                 <img src="http://placehold.it/320x150" alt="">
@@ -37,7 +46,7 @@
                                 <div class="ratings">
                                     <p class="pull-right">15 reviews</p>
                                     <p>';
-                    for ($i=0; $i < $ingredient->rating; $i++) {
+                    for ($i=0; $i < $ingredient->rating and $i < 5; $i++) { // only display max. of 5 stars.
                         echo '<span class="glyphicon glyphicon-star"></span>';
                     }
                     echo '          </p>

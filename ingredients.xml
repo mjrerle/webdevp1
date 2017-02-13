@@ -5,27 +5,27 @@
         <description>It's white flour. Make some bread.</description>
         <imgID>null</imgID>
         <price>5.00</price>
-        <rating>3</rating>
+        <rating>4</rating>
     </ingredient>
     <ingredient>
         <name>Salt</name>
         <description>Salty.</description>
         <imgID>null</imgID>
         <price>1.00</price>
-        <rating>3</rating>
+        <rating>2</rating>
     </ingredient>
     <ingredient>
         <name>Sugar</name>
         <description>Sweet.</description>
         <imgID>null</imgID>
         <price>2.00</price>
-        <rating>3</rating>
+        <rating>4</rating>
     </ingredient>
     <ingredient>
         <name>Eggs</name>
         <description>A whole 12 of `em.</description>
         <imgID>null</imgID>
         <price>5.00</price>
-        <rating>3</rating>
+        <rating>6</rating>
     </ingredient>
 </ingredientstore>
