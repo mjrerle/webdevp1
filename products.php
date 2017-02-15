@@ -5,6 +5,9 @@ $ingredientstore = simplexml_load_file("ingredients.xml") or die("Error: Cannot 
 
 if (isset($_GET['id'])) {
     # show product specifics
+    $id = $_GET['id'];
+    $ingredient = $ingredientstore->xpath("//ingredient[@id='$id']");
+    $ingredient = $ingredient[0];
     include 'templates/product_page.php';
 } else {
     # show product listing
