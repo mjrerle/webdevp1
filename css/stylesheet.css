@@ -65,3 +65,7 @@ nav > .container {
   line-height: 50px; /* Vertically center the text there */
   background-color: #f5f5f5;
 }
+
+#detailsContent {
+    margin-top: 75px;
+}
