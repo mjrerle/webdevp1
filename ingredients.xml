@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ingredientstore>
     <ingredient id="0">
-        <id>0</id>
         <name>Flour</name>
         <description>It's white flour. Make some bread.</description>
         <imgID>null</imgID>
@@ -9,7 +8,6 @@
         <rating>4</rating>
     </ingredient>
     <ingredient id="1">
-        <id>1</id>
         <name>Salt</name>
         <description>Salty.</description>
         <imgID>null</imgID>
@@ -17,7 +15,6 @@
         <rating>2</rating>
     </ingredient>
     <ingredient id="2">
-        <id>2</id>
         <name>Sugar</name>
         <description>Sweet.</description>
         <imgID>null</imgID>
@@ -25,7 +22,6 @@
         <rating>4</rating>
     </ingredient>
     <ingredient id="3">
-        <id>3</id>
         <name>Eggs</name>
         <description>A whole 12 of `em.</description>
         <imgID>null</imgID>
