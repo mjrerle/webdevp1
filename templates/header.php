@@ -42,6 +42,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+
                     <form class="navbar-form" action="products.php" method="get">
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="Search">
@@ -51,6 +52,7 @@
                     </li>
 
                     <li><a href="login.php">Sign In/Out</a></li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -65,4 +67,4 @@
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
-</nav>
+    </nav>
