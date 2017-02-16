@@ -3,29 +3,25 @@
     <ingredient id="0">
         <name>Flour</name>
         <description>It's white flour. Make some bread.</description>
-        <imgURL>http://placehold.it/320x150</imgURL>
+        <imgURL>http://placehold.it/320x320</imgURL>
         <price>5.00</price>
-        <rating>4</rating>
     </ingredient>
     <ingredient id="1">
         <name>Salt</name>
         <description>Salty.</description>
-        <imgURL>http://placehold.it/320x150</imgURL>
+        <imgURL>http://placehold.it/320x320</imgURL>
         <price>1.00</price>
-        <rating>2</rating>
     </ingredient>
     <ingredient id="2">
         <name>Sugar</name>
         <description>Sweet.</description>
-        <imgURL>http://placehold.it/320x150</imgURL>
+        <imgURL>http://placehold.it/320x320</imgURL>
         <price>2.00</price>
-        <rating>4</rating>
     </ingredient>
     <ingredient id="3">
         <name>Eggs</name>
         <description>A whole 12 of `em.</description>
-        <imgURL>http://placehold.it/320x150</imgURL>
+        <imgURL>http://placehold.it/320x320</imgURL>
         <price>5.00</price>
-        <rating>6</rating>
     </ingredient>
 </ingredientstore>

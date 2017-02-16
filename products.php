@@ -1,5 +1,6 @@
 <?php
 include 'templates/header.php';
+include 'includes/comments.php';
 
 $ingredientstore = simplexml_load_file("ingredients.xml") or die("Error: Cannot create object.");
 
