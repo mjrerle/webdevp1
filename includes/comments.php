@@ -1,8 +1,6 @@
 <?php
-
 $reviewStore = '';
 loadReviewStore($reviewStore);
-
 function getRating(&$reviewStore, $productID='')
 {
     $reviewArray = $reviewStore->xpath("//review[@productID='$productID']");
@@ -17,7 +15,6 @@ function getRating(&$reviewStore, $productID='')
     $avgRating = round($avgRating);
     return $avgRating;
 }
-
 function getRatingStars(&$reviewStore, $numStars)
 {
     $stars = "";
@@ -30,13 +27,11 @@ function getRatingStars(&$reviewStore, $numStars)
     }
     return $stars;
 }
-
 function getReviewCount(&$reviewStore, $productID='')
 {
     $reviewArray = $reviewStore->xpath("//review[@productID='$productID']");
     return count($reviewArray);
 }
-
 function loadReviews(&$reviewStore, $productID='')
 {
     $reviewArray = $reviewStore->xpath("//review[@productID='$productID']");
@@ -49,10 +44,8 @@ function loadReviews(&$reviewStore, $productID='')
                 </div>';
     }
 }
-
 function loadReviewStore(&$reviewStore)
 {
     $reviewStore = simplexml_load_file("comments.xml") or die("Error: Cannot create object.");
 }
-
 ?>

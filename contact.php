@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 <?php
   include 'templates/header.php';
   ob_start();
   session_start();
 
 ?>
-=======
-<?php include 'templates/header.php';?>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
@@ -34,7 +30,6 @@
         <div class="col-md-8">
         <!-- BEGIN DOWNLOAD PANEL -->
         <div class="panel panel-default well">
-<<<<<<< HEAD
           <?php
               if (isset($_POST['op']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['emailaddress'])) {
                 if(isset($_POST['phone'])){
@@ -72,10 +67,6 @@
               else { ?>
           <div class="panel-body">
             <form action="contact.php" class="form-horizontal track-event-form bv-form" data-goaltype="”General”" data-formname="”ContactUs”" method="post" id="contact-us-all" novalidate="novalidate">
-=======
-          <div class="panel-body">
-            <form action="" class="form-horizontal track-event-form bv-form" data-goaltype="”General”" data-formname="”ContactUs”" method="post" id="contact-us-all" novalidate="novalidate">
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
               <input name="elqSiteId" type="hidden" value="928">
               <input name="sFDCLastCampaignID" type="hidden" value="701400000012Lql">
               <input name="elqFormName" type="hidden" value="EMEAAllContactUsSubmissions">
@@ -89,27 +80,16 @@
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-user"></span>
                             </div>
-<<<<<<< HEAD
                     <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name *required*" name="firstname" data-bv-field="firstname">
                         </div>
                     <small data-bv-validator="notEmpty" data-bv-validator-for="firstname" class="help-block" style="display: none;">Required</small></div>                
-=======
-                    <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name" name="C_FirstName" data-bv-field="C_FirstName">
-                        </div>
-                    <small data-bv-validator="notEmpty" data-bv-validator-for="C_FirstName" class="help-block" style="display: none;">Required</small></div>                
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                 <div class="col-sm-6">
                   <div class="input-group">
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-user"></span>
                             </div>
-<<<<<<< HEAD
                     <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name *required*" name="lastname" data-bv-field="lastname"></div>
                         <small data-bv-validator="notEmpty" data-bv-validator-for="lastname" class="help-block" style="display: none;">Required</small></div>
-=======
-                    <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name" name="C_LastName" data-bv-field="C_LastName"></div>
-                        <small data-bv-validator="notEmpty" data-bv-validator-for="C_LastName" class="help-block" style="display: none;">Required</small></div>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                         </div>
 
               <div class="form-group">               
@@ -118,25 +98,15 @@
                               <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-envelope"></span>
                             </div>
-<<<<<<< HEAD
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email *required*" name="emailaddress" data-bv-field="emailaddress">
                         </div>
                     <small data-bv-validator="notEmpty" data-bv-validator-for="emailaddress" class="help-block" style="display: none;">Required</small></div>                
-=======
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="C_EmailAddress" data-bv-field="C_EmailAddress">
-                        </div>
-                    <small data-bv-validator="notEmpty" data-bv-validator-for="C_EmailAddress" class="help-block" style="display: none;">Required</small></div>                
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                           <div class="col-sm-6">
                             <div class="input-group">
                               <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-briefcase"></span>
                             </div>
-<<<<<<< HEAD
                             <input type="text" class="form-control" id="exampleInputCompany" placeholder="Enter company" name="company">
-=======
-                            <input type="text" class="form-control" id="exampleInputCompany" placeholder="Enter company" name="C_Company">
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                   </div>
                         </div>
               </div>
@@ -148,11 +118,7 @@
                       <span class="glyphicon glyphicon-globe"></span>          
                               </div>                        
                         
-<<<<<<< HEAD
                     <select data-placeholder="Choose country" class="C_Country_Modal form-control" id="country" name="country" data-bv-field="country">
-=======
-                    <select data-placeholder="Choose country" class="C_Country_Modal form-control" id="C_Country" name="C_Country" data-bv-field="C_Country">
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                               <option value="">--Select--</option>
                       <option value="United States">United States</option>
                       <option value="Afghanistan">Afghanistan</option>
@@ -401,11 +367,7 @@
                               <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                   </div>
-<<<<<<< HEAD
                       <small data-bv-validator="callback" data-bv-validator-for="country" class="help-block" style="display: none;">Choose one</small></div>
-=======
-                      <small data-bv-validator="callback" data-bv-validator-for="C_Country" class="help-block" style="display: none;">Choose one</small></div>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
       
                         <div class="col-sm-6">
                           <div class="input-group" style="display: none;">
@@ -490,11 +452,7 @@
                               <div class="input-group-addon">
                       <span class="glyphicon glyphicon-earphone"></span>          
                     </div>
-<<<<<<< HEAD
                     <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone">
-=======
-                    <input type="text" class="form-control" id="C_BusPhone" placeholder="Phone" name="C_BusPhone">
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                   </div>                                    
                 </div>
                       </div>
@@ -515,12 +473,8 @@
                   <button id="contacts-submit" type="submit" class="btn btn-default btn-info">CONTACT US</button>
                         </div>
                       </div>
-<<<<<<< HEAD
             <input type="hidden" value="done" name="op"></form>
           <?php }?>
-=======
-            <input type="hidden" value=""></form>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
           </div><!-- end panel-body -->
         </div><!-- end panel -->
         <!-- END DOWNLOAD PANEL -->

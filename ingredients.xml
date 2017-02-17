@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <ingredientstore>
     <ingredient id="0">
@@ -30,7 +29,6 @@
         <rating>6</rating>
     </ingredient>
 </ingredientstore>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <ingredientstore>
     <ingredient id="0">
@@ -58,4 +56,3 @@
         <price>5.00</price>
     </ingredient>
 </ingredientstore>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
