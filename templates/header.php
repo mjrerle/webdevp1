@@ -42,10 +42,6 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-<<<<<<< HEAD
-=======
-
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
                     <form class="navbar-form" action="products.php" method="get">
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="Search">
@@ -53,7 +49,6 @@
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                     </form>
                     </li>
-<<<<<<< HEAD
                     <li><a href="login.php">
                     <?php 
                       if (isset($_SESSION['username'])){
@@ -65,10 +60,6 @@
                       else{ echo "Sign In";}
                     ?>
                     </a></li>
-=======
-
-                    <li><a href="login.php">Sign In/Out</a></li>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
@@ -84,8 +75,4 @@
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
-<<<<<<< HEAD
 </nav>
-=======
-    </nav>
->>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
