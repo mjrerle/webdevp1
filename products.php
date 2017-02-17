@@ -1,6 +1,8 @@
 <?php
 include 'templates/header.php';
 $ingredientstore = simplexml_load_file("ingredients.xml") or die("Error: Cannot create object.");
+include 'includes/comments.php';
+$ingredientstore = simplexml_load_file("ingredients.xml") or die("Error: Cannot create object.");
 if (isset($_GET['id'])) {
     # show product specifics
     $id = $_GET['id'];
