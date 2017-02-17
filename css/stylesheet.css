@@ -66,6 +66,11 @@ nav > .container {
   background-color: #f5f5f5;
 }
 
+<<<<<<< HEAD
 #detailsContent {
     margin-top: 75px;
 }
+=======
+#detailsContent { margin-top: 75px; }
+#productImgCol { text-align: center; }
+>>>>>>> f2307949895493cd6e123333399d7e94adcd0e42
