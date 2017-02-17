@@ -1,3 +1,4 @@
+<?php require 'templates/header.php'; ?>
 <div class="jumbotron">
     <div class="container">
         <h1>Hello, world!</h1>
@@ -32,17 +33,17 @@
                     }
                     $productID = $ingredient['id'];
                     $price = $ingredient->price;
-                    $detailsURL = htmlspecialchars($_SERVER['PHP_SELF']) . '?id=' . $productID;
+                    $detailsURL = htmlspecialchars($_SERVER['PHP_SELF']) . '?action=view&id=' . $productID;
                     $imageURL = $ingredient->imgURL;
                     $name = $ingredient->name;
                     $description = $ingredient->description;
-                    $reviewCount = getReviewCount($reviewStore, $productID);
-                    $rating = getRating($reviewStore, $productID);
-                    $stars = getRatingStars($reviewStore, getRating($reviewStore, $ingredient['id']));
+                    $reviewCount = count($reviewStore->getProductReviews($productID));
+                    $rating = $reviewStore->getProductAvgRating($productID);
+                    $stars = $reviewStore->getRatingStars($rating);
                     echo '<div class="col-sm-3 col-lg-3 col-md-3">
                             <div class="thumbnail">
                                 <a href="'. $detailsURL .'">
-                                    <img src="' . $imageURL . '" alt="">
+                                    <img src="' . $imageURL . '" alt="" style="width:320px;">
                                 </a>
                                 <div class="caption">
                                     <h4 class="pull-right">$' . $price . '</h4>
@@ -62,3 +63,4 @@
         </div>
     </div>
 </div>
+<?php require 'templates/footer.php'; ?>
