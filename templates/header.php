@@ -48,7 +48,19 @@
                         </div>
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                     </form>
-                </li>
+                    </li>
+                    <li><a href="login.php">
+                    <?php 
+                      if (isset($_SESSION['username'])){
+                        echo $_SESSION['username'];
+
+                      ?><li><a href="logout.php">Logout</a></li>
+                      <?php
+                      }
+                      else{ echo "Sign In";}
+                    ?>
+                    </a></li>
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -58,7 +70,6 @@
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
                             <li><a href="#">Separated link</a></li>
-                            <li><a href="#">Sign In/Out</a></li>
                         </ul>
                     </li>
                 </ul>
