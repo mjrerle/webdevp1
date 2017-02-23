@@ -57,9 +57,9 @@ class ReviewStore
             $review->addAttribute('productID', $reviewArray['productID']);
 
             $review->addChild('author', $reviewArray['author']);
+            $review->addChild('title', $reviewArray['title']);
             $review->addChild('date', $reviewArray['date']);
             $review->addChild('rating', $reviewArray['rating']);
-            $review->addChild('title', $reviewArray['title']);
             $review->addChild('comment', $reviewArray['comment']);
 
             $this->__reviewStore->asXML($this->__file);

@@ -1,8 +1,18 @@
 <?php
-require 'templates/header.php';
 
+require 'templates/header.php';
+require_once 'includes/ingredients.php';
+require_once 'includes/reviews.php';
+
+$productID = checkProductID();
+
+$ingredientStore = new IngredientStore('data/ingredients.xml');
+$reviewStore = new ReviewStore('data/comments.xml');
+
+$ingredient = $ingredientStore->getIngredient($productID);
 $reviewArray = $reviewStore->getProductReviews($productID);
 $reviewCount = count($reviewArray);
+
 ?>
 <div class="container-fluid" id="detailsContent">
     <div class="row">
@@ -23,33 +33,51 @@ $reviewCount = count($reviewArray);
     <div class="row">
         <div class="col-sm-6" id="reviewList">
             <h3>Reviews and Comments</h3>
+
+            <?php if(isset($submissionOkay) and $submissionOkay === true): ?>
+                <div class="alert alert-success" id="formSuccess">
+                    <?php echo "Your review was submitted successfully."; ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if(isset($submissionOkay) and $submissionOkay != true): ?>
+                <div class="alert alert-danger" id="formError">
+                    <?php echo "There was an error with your review submission, please try again."; ?>
+                </div>
+            <?php endif; ?>
+
             <p><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#reviewForm">Review this product</button></p>
             <div id="reviewForm" class="collapse">
-                <div class="alert alert-danger" id="formError">
-
-                </div>
-                <form>
-                    <div class="form-group">
-                        <label for="emailInput">Email address *</label>
-                        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . "?action=review&id=$productID"; ?>">
                     <div class="form-group">
                         <label for="nameInput">Your name *</label>
-                        <input type="text" class="form-control" id="nameInput" placeholder="Enter name">
+                        <input type="text" name="name" class="form-control" id="nameInput" placeholder="Enter name" required="true">
                     </div>
                     <div class="form-group">
-                        <label for="ratingInput">Your rating *</label>
-                        <select class="form-control" id="ratingInput">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <label for="titleInput">Review Title *</label>
+                        <input type="text" name="title" class="form-control" id="titleInput" placeholder="Enter a title for your review" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="ratingInput">Your rating *</label><br>
+                        <label class="radio-inline">
+                            <input type="radio" name="rating" value="1" required="true">1
+                        </label>
+                        <label class="radio-inline" >
+                            <input type="radio" name="rating" value="2" required="true">2
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="rating" value="3" required="true">3
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="rating" value="4" required="true">4
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="rating" value="5" required="true">5
+                        </label>
                     </div>
                     <div class="form-group">
                         <label for="commentsInput">Comments</label>
-                        <textarea class="form-control" id="commentsInput" rows="3"></textarea>
+                        <textarea class="form-control" name="comment" id="commentsInput" rows="4"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
