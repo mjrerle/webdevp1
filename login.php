@@ -18,6 +18,7 @@
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $hash1 = "c963e367f63428189a6fa9cbd9e71a83";
     //mjrerle
+    //
     $hash2 = "48f2f942692b08ec9de1ef9ada5230a3";
     //Segovia
     $hash3 = "f82e20303393b2022146969d860ea0bf";
@@ -65,7 +66,7 @@
     <div class="col-md-4">
 
       <div class="wrapper">
-        <form action="#" method="post" name="Login_Form" class="form-signin">
+        <form action="login.php" method="post" name="Login_Form" class="form-signin">
           <h2 class= "form-signin-heading">Login</h2>
           <p><?php echo $msg;?></p>
 	     	  <hr class="colorgraph"><br>
