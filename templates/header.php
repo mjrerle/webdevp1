@@ -42,7 +42,6 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-
                     <form class="navbar-form" action="products.php" method="get">
                         <div class="form-group">
                             <input type="text" name="search" class="form-control" placeholder="Search">
@@ -50,8 +49,17 @@
                         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                     </form>
                     </li>
+                    <li><a href="login.php">
+                    <?php 
+                      if (isset($_SESSION['username'])){
+                        echo $_SESSION['username'];
 
-                    <li><a href="login.php">Sign In/Out</a></li>
+                      ?><li><a href="logout.php">Logout</a></li>
+                      <?php
+                      }
+                      else{ echo "Sign In";}
+                    ?>
+                    </a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
@@ -67,4 +75,4 @@
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
-    </nav>
+</nav>

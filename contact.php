@@ -1,4 +1,9 @@
-<?php include 'templates/header.php';?>
+<?php
+  include 'templates/header.php';
+  ob_start();
+  session_start();
+
+?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
@@ -25,8 +30,43 @@
         <div class="col-md-8">
         <!-- BEGIN DOWNLOAD PANEL -->
         <div class="panel panel-default well">
+          <?php
+              if (isset($_POST['op']) && !empty($_POST['firstname']) && !empty($_POST['lastname']) && !empty($_POST['emailaddress'])) {
+                if(isset($_POST['phone'])){
+                  $phone = filter_var($_POST['phone'],FILTER_VALIDATE_INT);
+                }
+                $country = "United States";
+                if(isset($_POST['country']))
+                  $country = $_POST['country'];
+                
+                $name  = $_POST['firstname']. " ".$_POST['lastname'];
+                $email = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
+              	$subject  = "Email from User with IP: ".$_SERVER['REMOTE_ADDR'];
+                $content  = $name. " sent you a message from".$country." submitted from https://www.cs.colostate.edu/~mjrerle/p1/contact.php\nEmail them back at: ".$email."\n";
+                if(isset($_POST['phone'])) $content.="Phone: ".$phone."\n";
+                if(isset($_POST['company'])) $content.="Company: ".$_POST['company']."\n";
+                error_reporting(0);
+                if(mail('mjrerle@rams.colostate.edu', 'From Project 1 Lab: '.$subject, $content.$_POST['Comments'])) {
+                  echo "<h2 align=\"center\">Your Email was Sent</h2>\n";
+                  echo "<p>$name, your comment:</p>\n";
+                  echo "<blockquote> \n". $_POST['Comments']." \n </blockquote>\n";
+	              } 
+                else {
+                  echo "<p>$name, there was an error trying to send your comment.</p>\n";
+            	  }
+              } 
+              else if (isset($_POST['op']) && (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['emailaddress']))) {
+                if(!isset($_POST['firstname']) || empty($_POST['firstname'])){?><p style="color:red">Missing first name</p><?php }
+                if(!isset($_POST['lastname']) || empty($_POST['lastname'])){ ?><p style="color:red">Missing last name</p><?php }
+                if(!isset($_POST['emailaddress']) || empty($_POST['emailaddress'])){ ?><p style="color:red">Missing email address</p><?php }
+
+                //tell user to enter required filed
+                ?> <a href="contact.php">You must fill in every required field! Click here to refresh!</a><br>
+                <?php
+              }
+              else { ?>
           <div class="panel-body">
-            <form action="" class="form-horizontal track-event-form bv-form" data-goaltype="”General”" data-formname="”ContactUs”" method="post" id="contact-us-all" novalidate="novalidate">
+            <form action="contact.php" class="form-horizontal track-event-form bv-form" data-goaltype="”General”" data-formname="”ContactUs”" method="post" id="contact-us-all" novalidate="novalidate">
               <input name="elqSiteId" type="hidden" value="928">
               <input name="sFDCLastCampaignID" type="hidden" value="701400000012Lql">
               <input name="elqFormName" type="hidden" value="EMEAAllContactUsSubmissions">
@@ -40,16 +80,16 @@
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-user"></span>
                             </div>
-                    <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name" name="C_FirstName" data-bv-field="C_FirstName">
+                    <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name *required*" name="firstname" data-bv-field="firstname">
                         </div>
-                    <small data-bv-validator="notEmpty" data-bv-validator-for="C_FirstName" class="help-block" style="display: none;">Required</small></div>                
+                    <small data-bv-validator="notEmpty" data-bv-validator-for="firstname" class="help-block" style="display: none;">Required</small></div>                
                 <div class="col-sm-6">
                   <div class="input-group">
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-user"></span>
                             </div>
-                    <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name" name="C_LastName" data-bv-field="C_LastName"></div>
-                        <small data-bv-validator="notEmpty" data-bv-validator-for="C_LastName" class="help-block" style="display: none;">Required</small></div>
+                    <input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter last name *required*" name="lastname" data-bv-field="lastname"></div>
+                        <small data-bv-validator="notEmpty" data-bv-validator-for="lastname" class="help-block" style="display: none;">Required</small></div>
                         </div>
 
               <div class="form-group">               
@@ -58,15 +98,15 @@
                               <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-envelope"></span>
                             </div>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="C_EmailAddress" data-bv-field="C_EmailAddress">
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email *required*" name="emailaddress" data-bv-field="emailaddress">
                         </div>
-                    <small data-bv-validator="notEmpty" data-bv-validator-for="C_EmailAddress" class="help-block" style="display: none;">Required</small></div>                
+                    <small data-bv-validator="notEmpty" data-bv-validator-for="emailaddress" class="help-block" style="display: none;">Required</small></div>                
                           <div class="col-sm-6">
                             <div class="input-group">
                               <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-briefcase"></span>
                             </div>
-                            <input type="text" class="form-control" id="exampleInputCompany" placeholder="Enter company" name="C_Company">
+                            <input type="text" class="form-control" id="exampleInputCompany" placeholder="Enter company" name="company">
                   </div>
                         </div>
               </div>
@@ -78,7 +118,7 @@
                       <span class="glyphicon glyphicon-globe"></span>          
                               </div>                        
                         
-                    <select data-placeholder="Choose country" class="C_Country_Modal form-control" id="C_Country" name="C_Country" data-bv-field="C_Country">
+                    <select data-placeholder="Choose country" class="C_Country_Modal form-control" id="country" name="country" data-bv-field="country">
                               <option value="">--Select--</option>
                       <option value="United States">United States</option>
                       <option value="Afghanistan">Afghanistan</option>
@@ -327,7 +367,7 @@
                               <option value="Zimbabwe">Zimbabwe</option>
                             </select>
                   </div>
-                      <small data-bv-validator="callback" data-bv-validator-for="C_Country" class="help-block" style="display: none;">Choose one</small></div>
+                      <small data-bv-validator="callback" data-bv-validator-for="country" class="help-block" style="display: none;">Choose one</small></div>
       
                         <div class="col-sm-6">
                           <div class="input-group" style="display: none;">
@@ -412,7 +452,7 @@
                               <div class="input-group-addon">
                       <span class="glyphicon glyphicon-earphone"></span>          
                     </div>
-                    <input type="text" class="form-control" id="C_BusPhone" placeholder="Phone" name="C_BusPhone">
+                    <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone">
                   </div>                                    
                 </div>
                       </div>
@@ -433,7 +473,8 @@
                   <button id="contacts-submit" type="submit" class="btn btn-default btn-info">CONTACT US</button>
                         </div>
                       </div>
-            <input type="hidden" value=""></form>
+            <input type="hidden" value="done" name="op"></form>
+          <?php }?>
           </div><!-- end panel-body -->
         </div><!-- end panel -->
         <!-- END DOWNLOAD PANEL -->

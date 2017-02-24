@@ -1,4 +1,15 @@
-<?php require 'templates/header.php'; ?>
+<?php
+
+require 'templates/header.php';
+require_once 'includes/ingredients.php';
+require_once 'includes/reviews.php';
+
+$ingredientStore = new IngredientStore('data/ingredients.xml');
+$reviewStore = new ReviewStore('data/comments.xml');
+
+$ingredientArray = $ingredientStore->getIngredientList();
+
+?>
 <div class="jumbotron">
     <div class="container">
         <h1>Hello, world!</h1>
@@ -21,7 +32,7 @@
         <div class="col-md-8" id="productsCol">
             <div class="row">
                 <?php
-                foreach ($ingredientstore as $ingredient) {
+                foreach ($ingredientArray as $ingredient) {
                     // check if search term was included in GET request
                     if(isset($_GET['search'])) {
                         // Filter and sanitize input
