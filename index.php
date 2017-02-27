@@ -11,32 +11,32 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide" src="img/aromatic-84691_1920.jpg" alt="First slide">
+            <img class="first-slide" src="img/background-1932466_1920.jpg" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Example headline.</h1>
-                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                    <h1>Fresh Food Your Way.</h1>
+                    <p></p>
+                    <p><a class="btn btn-lg btn-primary" href="products.php" role="button">Shop Now</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="img/cinnamon-stick-514243_1920.jpg" alt="Second slide">
+            <img class="second-slide" src="img/watermelon-815072_1920.jpg" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    <h1>Food delivery has never been this simple</h1>
+                    <p>Local. Organic. Fresh.</p>
+                    <p><a class="btn btn-lg btn-primary" href="about.php" role="button">Learn more about us</a></p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="img/pop-corn-785074_1920.jpg" alt="Third slide">
+            <img class="third-slide" src="img/apple-661726_1920.jpg" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                    <h1>Our mission is simple</h1>
+                    <p>We want satisfied customers the old fashioned way: by quality food and quality service.</p>
+                    <p><a class="btn btn-lg btn-primary" href="contact.php" role="button">Tell us how we're doing</a></p>
                 </div>
             </div>
         </div>
@@ -50,5 +50,31 @@
         <span class="sr-only">Next</span>
     </a>
 </div><!-- /.carousel -->
+
+<div class="marketing container">
+    <div class="jumpbar">
+
+    </div>
+    <div class="row" id="marketingOverview">
+        <div class="col-sm-4 featurette">
+            <img src="#" alt="image">
+        </div>
+        <div class="col-sm-4 featurette">
+            <img src="#" alt="image">
+        </div>
+        <div class="col-sm-4 featurette">
+            <img src="#" alt="image">
+        </div>
+    </div>
+    <div class="row" id="marketingQuality">
+
+    </div>
+    <div class="row" id="marketingShipping">
+
+    </div>
+    <div class="row" id="marketingSomething">
+
+    </div>
+</div>
 
 <?php include 'templates/footer.php'; ?>

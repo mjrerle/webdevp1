@@ -28,6 +28,16 @@ nav > .container {
   height: 500px;
 }
 
+.featurette {
+    text-align: center;
+}
+
+.jumbotron {
+    color: white;
+    background-image: url("../img/background-1932466_1920.jpg");
+    background-size: cover;
+}
+
 .list-group {
     border-radius: 0;
 }
@@ -36,8 +46,8 @@ nav > .container {
     border-radius: 0;
 }
 
-.thumbnail img {
-    width: 100%;
+.product-listing {
+    height: 400px;
 }
 
 .ratings {
@@ -57,7 +67,7 @@ nav > .container {
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
