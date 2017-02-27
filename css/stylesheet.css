@@ -30,6 +30,20 @@ nav > .container {
 
 .featurette {
     text-align: center;
+    padding: 0 40px;
+}
+
+.featurette-image {
+    height: 210px;
+}
+
+.featurette-text {
+    height: 110px;
+}
+
+.featurette img {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .jumbotron {
