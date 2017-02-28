@@ -135,7 +135,6 @@
             </p>
         </div>
     </div>
-    <hr>
 </div>
 
 <?php include 'templates/footer.php'; ?>
