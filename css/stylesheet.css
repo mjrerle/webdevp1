@@ -37,6 +37,7 @@ nav > .container {
     background: white none;
     box-shadow: none;
     -webkit-box-shadow: none;
+    margin: 0;
 }
 
 /* ----- HOMEPAGE STYLES ----- */
@@ -107,6 +108,12 @@ nav > .container {
 .thumbnail .caption-full {
     padding: 9px;
     color: #333;
+}
+
+/* ----- PRODUCT PAGE STYLES ----- */
+
+.product-details {
+    padding-top: 15px;
 }
 
 /* ----- FOOTER STYLES ----- */

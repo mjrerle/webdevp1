@@ -14,7 +14,7 @@ $reviewArray = $reviewStore->getProductReviews($productID);
 $reviewCount = count($reviewArray);
 
 ?>
-<div class="container-fluid" id="detailsContent">
+<div class="container-fluid product-details">
     <div class="row">
         <div class="col-sm-3" id="productImgCol">
             <img src="<?php echo $ingredient->imgURL; ?>" alt="product image" style="width:320px;">
