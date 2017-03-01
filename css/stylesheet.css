@@ -119,6 +119,11 @@ nav > .container {
     background-color: white;
 }
 
+.product-image {
+    width: 320px;
+    border: 1px solid #eee;
+}
+
 /* ----- FOOTER STYLES ----- */
 
 .footer {
