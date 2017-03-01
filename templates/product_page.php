@@ -13,6 +13,7 @@ $ingredient = $ingredientStore->getIngredient($productID);
 $reviewArray = $reviewStore->getProductReviews($productID);
 $reviewCount = count($reviewArray);
 
+include 'templates/jumbotron.php';
 ?>
 <div class="container-fluid product-details">
     <div class="row">

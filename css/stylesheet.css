@@ -113,7 +113,10 @@ nav > .container {
 /* ----- PRODUCT PAGE STYLES ----- */
 
 .product-details {
-    padding-top: 15px;
+    padding: 20px;
+    margin: 40px;
+    box-shadow: 0 0 5px 0 lightgrey;
+    background-color: white;
 }
 
 /* ----- FOOTER STYLES ----- */
