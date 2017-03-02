@@ -1,3 +1,4 @@
+<?php include 'control.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">CT310 Ingredients Emporium</a>
+                <a class="navbar-brand" href="index.php">CT310 Ingredients Emporium</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
