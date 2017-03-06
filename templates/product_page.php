@@ -21,6 +21,7 @@ include 'templates/jumbotron.php';
             <p><?php echo $ingredient->description; ?></p>
             <?php echo $reviewStore->getRatingStars($reviewStore->getProductAvgRating($ingredient['id'])); ?>
             <span class=""><a href="#reviewList"><?php echo $reviewCount; ?> Reviews</a></span>
+            <h4>$<?php echo $ingredient->price; ?></h4>
         </div>
         <div class="col-md-3" id="productPurchaseCol">
 
