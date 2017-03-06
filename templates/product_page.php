@@ -1,14 +1,10 @@
 <?php
-
 require 'templates/header.php';
 require_once 'includes/ingredients.php';
 require_once 'includes/reviews.php';
-
 $productID = checkProductID();
-
 $ingredientStore = new IngredientStore('data/ingredients.xml');
 $reviewStore = new ReviewStore('data/comments.xml');
-
 $ingredient = $ingredientStore->getIngredient($productID);
 $reviewArray = $reviewStore->getProductReviews($productID);
 $reviewCount = count($reviewArray);
@@ -34,6 +30,7 @@ include 'templates/jumbotron.php';
     <div class="row">
         <div class="col-sm-6" id="reviewList">
             <h3>Reviews and Comments</h3>
+            <?php if(!empty($_SESSION['valid'])){?>
 
             <?php if(isset($submissionOkay) and $submissionOkay === true): ?>
                 <div class="alert alert-success" id="formSuccess">
@@ -83,6 +80,11 @@ include 'templates/jumbotron.php';
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+            <?php
+            } else{
+            ?>
+            <p style="color:red;">You must be logged in to review!</p>
+            <?php } ?>
             <?php
             foreach ($reviewArray as $review) {
                 echo   '<hr>

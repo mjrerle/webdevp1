@@ -1,14 +1,10 @@
 <?php
-
 require 'templates/header.php';
 require_once 'includes/ingredients.php';
 require_once 'includes/reviews.php';
-
 $ingredientStore = new IngredientStore('data/ingredients.xml');
 $reviewStore = new ReviewStore('data/comments.xml');
-
 $ingredientArray = $ingredientStore->getIngredientList();
-
 ?>
 
 <?php include 'templates/jumbotron.php'; ?>
@@ -46,7 +42,7 @@ $ingredientArray = $ingredientStore->getIngredientList();
                     $reviewCount = count($reviewStore->getProductReviews($productID));
                     $rating = $reviewStore->getProductAvgRating($productID);
                     $stars = $reviewStore->getRatingStars($rating);
-                    echo '<div class="col-sm-3 col-lg-3 col-md-3 product-listing">
+                    echo '<div class="col-md-3 col-lg-3 col-md-3 product-listing">
                             <div class="thumbnail">
                                 <a href="'. $detailsURL .'">
                                     <img src="' . $imageURL . '" alt="" style="width:320px;">

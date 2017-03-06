@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  */
@@ -7,7 +6,6 @@ class ReviewStore
 {
     private $__file;
     private $__reviewStore;
-
     function __construct($file='')
     {
         $this->__file = $file;
@@ -27,7 +25,6 @@ class ReviewStore
         $avgRating = round($avgRating);
         return $avgRating;
     }
-
     function getRatingStars($numStars)
     {
         $stars = "";
@@ -40,30 +37,23 @@ class ReviewStore
         }
         return $stars;
     }
-
     public function getProductReviews($productID='')
     {
         $reviewArray = $this->__reviewStore->xpath("//review[@productID='$productID']");
         return $reviewArray;
     }
-
-
     public function addReview($reviewArray='')
     {
         try {
             $review = $this->__reviewStore->addChild('review');
-
             $review->addAttribute('id', 0);
             $review->addAttribute('productID', $reviewArray['productID']);
-
             $review->addChild('author', $reviewArray['author']);
             $review->addChild('title', $reviewArray['title']);
             $review->addChild('date', $reviewArray['date']);
             $review->addChild('rating', $reviewArray['rating']);
-            $review->addChild('comment', $reviewArray['comment']);
-
+            $review->addChild('comment', filter_var($reviewArray['comment'],FILTER_SANITIZE_STRING));
             $this->__reviewStore->asXML($this->__file);
-
         } catch (Exception $e) {
             die("Error occurred");
         }
@@ -74,9 +64,4 @@ class ReviewStore
         $this->__reviewStore = simplexml_load_file($this->__file) or die("Error: Cannot create object.");
     }
 }
-
-
-
-
-
 ?>
