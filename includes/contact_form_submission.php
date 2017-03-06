@@ -7,17 +7,17 @@
     $country = "United States";
     if(isset($_POST['country']))
       $country = $_POST['country'];            
-    $name  = $_POST['firstname']. " ".$_POST['lastname'];
+    $name  = filter_var($_POST['firstname']. " ".$_POST['lastname'],FILTER_SANITIZE_STRING);
     $email = filter_var($_POST['emailaddress'], FILTER_SANITIZE_EMAIL);
    	$subject  = "Email from User with IP: ".$_SERVER['REMOTE_ADDR'];
     $content  = $name. " sent you a message from".$country." submitted from https://www.cs.colostate.edu/~mjrerle/p1/contact.php\nEmail them back at: ".$email."\n";
     if(isset($_POST['phone'])) $content.="Phone: ".$phone."\n";
-    if(isset($_POST['company'])) $content.="Company: ".$_POST['company']."\n";
+    if(isset($_POST['company'])) $content.="Company: ".filter_var($_POST['company'],FILTER_SANITIZE_STRING)."\n";
     error_reporting(0);
-    if(mail('jrerle@rams.colostate.edu', 'From Project 1 Lab: '.$subject, $content.$_POST['Comments'])) {
+    if(mail('jrerle@rams.colostate.edu', 'From Project 1 Lab: '.$subject, $content.filter_var($_POST['Comments'],FILTER_SANITIZE_STRING))) {
       echo "<h2 align=\"center\">Your Email was Sent</h2>\n";
       echo "<p>$name, your comment:</p>\n";
-      echo "<blockquote> \n". $_POST['Comments']." \n </blockquote>\n";
+      echo "<blockquote> \n".filter_var($_POST['Comments'],FILTER_SANITIZE_STRING)." \n </blockquote>\n";
     } 
     else {
     echo "<p>$name, there was an error trying to send your comment.</p>\n";

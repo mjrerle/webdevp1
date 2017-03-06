@@ -52,7 +52,7 @@ class ReviewStore
             $review->addChild('title', $reviewArray['title']);
             $review->addChild('date', $reviewArray['date']);
             $review->addChild('rating', $reviewArray['rating']);
-            $review->addChild('comment', $reviewArray['comment']);
+            $review->addChild('comment', filter_var($reviewArray['comment'],FILTER_SANITIZE_STRING));
             $this->__reviewStore->asXML($this->__file);
         } catch (Exception $e) {
             die("Error occurred");
