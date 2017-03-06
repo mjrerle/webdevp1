@@ -9,18 +9,9 @@ $ingredientArray = $ingredientStore->getIngredientList();
 
 <?php include 'templates/jumbotron.php'; ?>
 
-<div class="container-fluid" id="content">
+<div class="container-fluid product-list" id="content" style="">
     <div class="row">
-        <div class="col-lg-2" id="filtersCol">
-            <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-        </div>
-        <div class="col-md-8" id="productsCol">
+        <div class="col-md-12" id="productsCol" >
             <div class="row">
                 <?php
                 foreach ($ingredientArray as $ingredient) {
@@ -45,7 +36,7 @@ $ingredientArray = $ingredientStore->getIngredientList();
                     echo '<div class="col-md-3 col-lg-3 col-md-3 product-listing">
                             <div class="thumbnail">
                                 <a href="'. $detailsURL .'">
-                                    <img src="' . $imageURL . '" alt="" style="width:320px;">
+                                    <img src="' . $imageURL . '" alt="thumbnail">
                                 </a>
                                 <div class="caption">
                                     <h4 class="pull-right">$' . $price . '</h4>
