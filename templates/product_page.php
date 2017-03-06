@@ -13,16 +13,16 @@ include 'templates/jumbotron.php';
 ?>
 <div class="container-fluid product-details">
     <div class="row">
-        <div class="col-sm-3" id="productImgCol">
+        <div class="col-md-3" id="productImgCol">
             <img class="product-image" src="<?php echo $ingredient->imgURL; ?>" alt="product image">
         </div>
-        <div class="col-sm-3" id="productDetailsCol">
+        <div class="col-md-3" id="productDetailsCol">
             <h3><?php echo $ingredient->name; ?></h3>
             <p><?php echo $ingredient->description; ?></p>
             <?php echo $reviewStore->getRatingStars($reviewStore->getProductAvgRating($ingredient['id'])); ?>
             <span class=""><a href="#reviewList"><?php echo $reviewCount; ?> Reviews</a></span>
         </div>
-        <div class="col-sm-4" id="productPurchaseCol">
+        <div class="col-md-3" id="productPurchaseCol">
 
         </div>
     </div>
