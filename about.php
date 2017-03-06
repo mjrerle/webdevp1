@@ -1,12 +1,6 @@
 <?php include 'templates/header.php';?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Ingredients Emporium</h1>
-            <p>Fresh, Local, Your Way.</p>
-            <p><a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more &raquo;</a></p>
-        </div>
-    </div>
+    <?php include 'templates/jumbotron.php'; ?>
 
     <div class="container-fluid" id="content">
         <div class="row">
