@@ -33,7 +33,7 @@ $ingredientArray = $ingredientStore->getIngredientList();
                     $reviewCount = count($reviewStore->getProductReviews($productID));
                     $rating = $reviewStore->getProductAvgRating($productID);
                     $stars = $reviewStore->getRatingStars($rating);
-                    echo '<div class="col-md-3 col-lg-3 col-md-3 product-listing">
+                    echo '<div class="col-sm-3 col-md-3 col-xs-3 product-listing">
                             <div class="thumbnail">
                                 <a href="'. $detailsURL .'">
                                     <img src="' . $imageURL . '" alt="thumbnail">

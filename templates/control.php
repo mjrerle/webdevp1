@@ -1,5 +1,6 @@
 <?php
-  session_name("something");
+  $sessname="p1_project_with_mjrerle_and_camja";
+  session_name($sessname);
   session_start();
   $host = $_SERVER['HTTP_HOST'];
   $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
