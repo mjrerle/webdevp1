@@ -1,5 +1,5 @@
 <?php
-session_name("something");
+session_name("p1_project_with_mjrerle_and_camja");
 session_start();
 $_SESSION = array();
 if(ini_get("session.use_cookies")){

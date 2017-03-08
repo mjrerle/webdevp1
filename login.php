@@ -1,13 +1,5 @@
-
 <?php include 'templates/header.php';?>
-<div class="jumbotron">
-           <div class="container">
-               <h1>Hello, world!</h1>
-               <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a star    ting point to create something more unique.</p>
-               <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-           </div>
-       </div>
-
+<?php include 'templates/jumbotron.php';?>
 <div class="container">
 <div class = "container form-signin">
 <?php
@@ -15,8 +7,8 @@
   if (isset($_POST['username']) && isset($_POST['password'])) {
     $hash1 = "c963e367f63428189a6fa9cbd9e71a83";
     //mjrerle
-    $hash2 = "48f2f942692b08ec9de1ef9ada5230a3";
-    //Segovia
+    $hash2 = "3aaec86181ee6974b99d893b4c1eb5b5";
+    //IFY_hortus
     $hash3 = "f82e20303393b2022146969d860ea0bf";
     //camja
     $store = md5($_POST['password']);
@@ -49,7 +41,7 @@
     $msg= "Please set username";
   }
   elseif (!empty($_SESSION['username'])){
-    $msg= "You are logged in as ".$user;
+    $msg= "You are logged in as ".$_SESSION['username'];
   }
   else{$msg="Welcome";}
 ?>
