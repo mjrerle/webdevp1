@@ -59,7 +59,7 @@
 
     </div>
     <div class="row" id="marketingOverview">
-        <div class="col-sm-4 featurette">
+        <div class="col-md-4 featurette">
             <div class="featurette-image">
                 <img class="img-rounded" src="img/barley-872000_640.jpg" alt="image">
             </div>
@@ -69,7 +69,7 @@
             </p>
             <a class="btn btn-lg btn-primary" href="#freshness" role="button">Learn More</a>
         </div>
-        <div class="col-sm-4 featurette">
+        <div class="col-md-4 featurette">
             <div class="featurette-image">
                 <img class="img-rounded" src="img/semi-truck-1285131_640.jpg" alt="image">
             </div>
@@ -79,7 +79,7 @@
             </p>
             <a class="btn btn-lg btn-primary" href="#shipping" role="button">Learn More</a>
         </div>
-        <div class="col-sm-4 featurette">
+        <div class="col-md-4 featurette">
             <div class="featurette-image">
                 <img class="img-rounded" src="img/tomato-1205699_1280.jpg" alt="image">
             </div>
@@ -91,7 +91,7 @@
         </div>
     </div>
     <hr>
-    <div class="row" id="freshness">
+    <div class="row feature-big" id="freshness">
         <h1 style="text-align: center; margin-bottom: 40px;">Always fresh. Always organic.</h1>
         <div class="col-md-5">
             <img class="img-rounded" src="img/grapes-690230_1280.jpg" style="width: 100%" alt="organic"/>
@@ -106,7 +106,7 @@
         </div>
     </div>
     <hr>
-    <div class="row" id="shipping">
+    <div class="row feature-big" id="shipping">
         <h1 style="text-align: center; margin-bottom: 40px;">Ships next day, arrives same week.</h1>
         <div class="col-md-7">
             <p>
@@ -121,7 +121,7 @@
         </div>
     </div>
     <hr>
-    <div class="row" id="quality">
+    <div class="row feature-big" id="quality">
         <h1 style="text-align: center; margin-bottom: 40px;">Nothing less than the finest.</h1>
         <div class="col-md-5">
             <img class="img-rounded" src="img/restaurant-bern-179046_1280.jpg" style="width: 100%" alt="delivery"/>
